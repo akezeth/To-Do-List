@@ -1,7 +1,7 @@
-let getTasks = () => JSON.parse(localStorage.getItem("tasks")) || [];
+const getTasks = () => JSON.parse(localStorage.getItem('tasks')) || [];
 
 const saveTasks = (tasksArray) => {
-  localStorage.setItem("tasks", JSON.stringify(tasksArray));
+  localStorage.setItem('tasks', JSON.stringify(tasksArray));
 };
 
 export { getTasks, saveTasks };
