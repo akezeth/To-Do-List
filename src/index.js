@@ -1,6 +1,6 @@
 import './style.css';
 import { saveTasks } from './modules/localStorage.js';
-import Tasks from './modules/Tasks.js';
+import Tasks from './modules/tasks.js';
 import newTask from './modules/newTask.js';
 import clearCompletedTasks from './modules/clearCompletedTasks.js';
 import editTask from './modules/editTask.js';
