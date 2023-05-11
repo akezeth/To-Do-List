@@ -23,18 +23,27 @@ body {
   align-items: center;
 }
 
-.pointer {
+.borderless {
+  border: none;
+  outline: none;
+  background-color: transparent;
   color: rgba(77, 74, 74, 0.6);
+}
+
+.pointer {
   cursor: pointer;
+  padding: 0 0.3rem;
+  font-size: 1.2rem;
 }
 
 .cross {
-  color: rgba(77, 74, 74, 0.6);
   cursor: all-scroll;
+  padding: 0 0.9rem;
+  font-size: 1.5rem;
 }
 
 .list {
-  padding: 1rem 2rem;
+  padding: 1rem 1rem 1rem 2rem;
   border-bottom: 1px solid rgba(77, 74, 74, 0.2);
 }
 
@@ -45,13 +54,16 @@ body {
 .task-input-container input {
   font-style: italic;
   font-size: 1rem;
-  width: 90%;
-  padding: 0.3rem;
+  width: 94%;
   border: none;
 }
 
 input:focus {
   outline: none;
+}
+
+.task-input-container form {
+  width: 100%;
 }
 
 .tasks {
