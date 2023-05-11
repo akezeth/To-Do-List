@@ -1,14 +1,13 @@
-const tasks = [
-  {
-    description: 'wash the dishes',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'complete To Do list project',
-    completed: false,
-    index: 1,
-  },
-];
+const tasksContainer = document.querySelector(".tasks");
+const taskTemplate = document.getElementById("task-template");
+import { getTasks, saveTasks } from "./localStorage.js";
 
-export default tasks;
+export default class Tasks {
+  constructor() {
+    this.getData();
+  }
+
+  getData() {
+    this.taskArray = getTasks();
+  }
+}
