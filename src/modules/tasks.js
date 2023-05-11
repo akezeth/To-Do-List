@@ -1,7 +1,7 @@
-import { getTasks, saveTasks } from "./localStorage.js";
+import { getTasks, saveTasks } from './localStorage.js';
 
-const tasksContainer = document.querySelector(".tasks");
-const taskTemplate = document.getElementById("task-template");
+const tasksContainer = document.querySelector('.tasks');
+const taskTemplate = document.getElementById('task-template');
 
 export default class Tasks {
   constructor() {
@@ -31,17 +31,17 @@ export default class Tasks {
   }
 
   display() {
-    tasksContainer.innerHTML = "";
+    tasksContainer.innerHTML = '';
     this.taskArray.forEach((task) => {
       const taskElement = document.importNode(taskTemplate.content, true);
-      const checkbox = taskElement.querySelector("input");
+      const checkbox = taskElement.querySelector('input');
       checkbox.id = task.index;
       checkbox.checked = task.complete;
-      const label = taskElement.querySelector("label");
+      const label = taskElement.querySelector('label');
       if (task.complete) {
-        label.contentEditable = "false";
+        label.contentEditable = 'false';
       } else {
-        label.contentEditable = "true";
+        label.contentEditable = 'true';
       }
       label.append(task.name);
       tasksContainer.appendChild(taskElement);
