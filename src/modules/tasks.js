@@ -23,4 +23,18 @@ export default class Tasks {
     }
     saveTasks(this.taskArray);
   }
+
+  display() {
+    tasksContainer.innerHTML = "";
+    this.taskArray.forEach((task) => {
+      const taskElement = document.importNode(taskTemplate.content, true);
+      const checkbox = taskElement.querySelector("input");
+      checkbox.id = task.index;
+      checkbox.checked = task.complete;
+      const label = taskElement.querySelector("label");
+      label.htmlFor = task.index;
+      label.append(task.name);
+      tasksContainer.appendChild(taskElement);
+    });
+  }
 }
