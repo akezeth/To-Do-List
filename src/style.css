@@ -53,7 +53,7 @@ body {
 
 .task-input-container input {
   font-style: italic;
-  font-size: 1rem;
+  font-size: 1.25rem;
   width: 94%;
   border: none;
 }
@@ -74,8 +74,8 @@ input:focus {
   gap: 1rem;
 }
 
-.taskInfo p {
-  font-size: 1rem;
+.taskInfo label {
+  font-size: 1.25rem;
 }
 
 .clear.list {
@@ -84,4 +84,9 @@ input:focus {
   background-color: #f0ecec;
   color: rgba(77, 74, 74, 0.8);
   cursor: pointer;
+}
+
+[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
