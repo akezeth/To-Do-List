@@ -1,21 +1,39 @@
 import './style.css';
-import tasks from './modules/tasks.js';
+import { saveTasks } from './modules/localStorage.js';
+import Tasks from './modules/Tasks.js';
+import newTask from './modules/newTask.js';
+import clearCompletedTasks from './modules/clearCompletedTasks.js';
 
-const displayTasks = () => {
-  tasks.forEach((task) => {
-    const taskContent = `
-      <li class="taskContent flex list">
-        <div class="taskInfo flex">
-          <input type="checkbox" class="completed-btn" ${
-  task.completed ? 'checked' : ''
-}>
-          <p>${task.description}</p>
-        </div>
-        <i class="fa-solid fa-ellipsis-vertical task-icon cross"></i>
-      </li>
-    `;
-    document.querySelector('.tasks').innerHTML += taskContent;
-  });
-};
+const addTaskBtn = document.querySelector('#addTaskBtn');
+const refreshBtn = document.querySelector('#refreshBtn');
+const tasks = new Tasks();
 
-displayTasks();
+tasks.display();
+// Add new task
+const newTaskForm = document.querySelector('[data-new-task-form]');
+newTaskForm.addEventListener('submit', (e) => {
+  e.preventDefault();
+  newTask(tasks);
+});
+addTaskBtn.addEventListener('click', () => {
+  newTask(tasks);
+});
+// EventListener to check completed tasks
+const tasksContainer = document.querySelector('.tasks');
+tasksContainer.addEventListener('click', (e) => {
+  if (e.target.tagName.toLowerCase() === 'input') {
+    const selectedTask = tasks.taskArray.find(
+      (task) => task.index === parseInt(e.target.id, 10),
+    );
+    selectedTask.complete = e.target.checked;
+    saveTasks(tasks.taskArray);
+  }
+});
+// clear all completed tasks
+const clearBtn = document.querySelector('[data-clear-completed-task]');
+clearBtn.addEventListener('click', () => {
+  clearCompletedTasks(tasks);
+});
+refreshBtn.addEventListener('click', () => {
+  clearCompletedTasks(tasks);
+});
