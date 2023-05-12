@@ -38,11 +38,7 @@ export default class Tasks {
       checkbox.id = task.index;
       checkbox.checked = task.complete;
       const label = taskElement.querySelector('label');
-      if (task.complete) {
-        label.contentEditable = 'false';
-      } else {
-        label.contentEditable = 'true';
-      }
+      label.contentEditable = !task.complete;
       label.append(task.name);
       tasksContainer.appendChild(taskElement);
     });
