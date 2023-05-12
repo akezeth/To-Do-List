@@ -6,6 +6,7 @@
 
 - [Features](#features-)🚀
 - [Built With](#built-with-)🛠
+- [Live Demo](#Live-Demo-) 💻
 - [Getting Started](#getting-started-)🏁
 - [Authors](#authors-)👥
 - [Future Features](#future-features-)🔭
@@ -32,6 +33,10 @@ This web app was built with:
 - CSS
 - JavaScript
 - Webpack
+
+## Live Demo 💻
+
+https://akezeth.github.io/To-Do-List/dist/
 
 ## Getting Started 🏁
 
