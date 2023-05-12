@@ -36,10 +36,20 @@ body {
   font-size: 1.2rem;
 }
 
+.pointer:hover {
+  color: rgb(90, 24, 151);
+  transform: scale(1.1);
+}
+
 .cross {
-  cursor: all-scroll;
-  padding: 0 0.9rem;
-  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  font-size: 1.3rem;
+}
+
+.cross:hover {
+  color: rgb(243, 6, 6);
+  transform: scale(1.2);
 }
 
 .list {
