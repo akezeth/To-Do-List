@@ -11,22 +11,43 @@
       <ul>
         <li class="header flex list">
           <h2>Today's To Do</h2>
-          <i class="fas fa-sync-alt normal-icons pointer"></i>
+          <button class="borderless pointer" id="refreshBtn">
+            <i class="fas fa-sync-alt normal-icons pointer"></i>
+          </button>
         </li>
         <li class="task-input-container flex list">
-          <input
-            type="text"
-            class="task-input"
-            placeholder="Add to your list..."
-          />
-          <i class="fas normal-icons task-input-icon pointer">&#xf3be;</i>
+          <form action="" data-new-task-form>
+            <input
+              type="text"
+              class="task-input"
+              data-new-task-input
+              placeholder="Add to your list..."
+            />
+            <button class="borderless" id="addTaskBtn">
+              <i class="fa-solid fa-plus pointer"></i>
+            </button>
+          </form>
         </li>
         <li class="tasks-container flex">
           <ul class="tasks"></ul>
         </li>
-        <li class="clear list">Clear all completed</li>
+        <li class="clear list" data-clear-completed-task>
+          Clear all completed
+        </li>
       </ul>
     </section>
+
+    <template id="task-template">
+      <li class="taskContent flex list">
+        <div class="taskInfo flex">
+          <input type="checkbox" class="complete-btn" />
+          <label class="task-name"></label>
+        </div>
+        <button class="delete-btn borderless">
+          <i class="fa-solid fa-trash-can cross delete-icon"></i>
+        </button>
+      </li>
+    </template>
     <script
       src="https://kit.fontawesome.com/e88675a3bd.js"
       crossorigin="anonymous"

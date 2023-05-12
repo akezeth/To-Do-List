@@ -23,18 +23,37 @@ body {
   align-items: center;
 }
 
-.pointer {
+.borderless {
+  border: none;
+  outline: none;
+  background-color: transparent;
   color: rgba(77, 74, 74, 0.6);
+}
+
+.pointer {
   cursor: pointer;
+  padding: 0 0.3rem;
+  font-size: 1.2rem;
+}
+
+.pointer:hover {
+  color: rgb(90, 24, 151);
+  transform: scale(1.1);
 }
 
 .cross {
-  color: rgba(77, 74, 74, 0.6);
-  cursor: all-scroll;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  font-size: 1.3rem;
+}
+
+.cross:hover {
+  color: rgb(243, 6, 6);
+  transform: scale(1.2);
 }
 
 .list {
-  padding: 1rem 2rem;
+  padding: 1rem 1rem 1rem 2rem;
   border-bottom: 1px solid rgba(77, 74, 74, 0.2);
 }
 
@@ -44,14 +63,17 @@ body {
 
 .task-input-container input {
   font-style: italic;
-  font-size: 1rem;
-  width: 90%;
-  padding: 0.3rem;
+  font-size: 1.25rem;
+  width: 94%;
   border: none;
 }
 
 input:focus {
   outline: none;
+}
+
+.task-input-container form {
+  width: 100%;
 }
 
 .tasks {
@@ -62,8 +84,8 @@ input:focus {
   gap: 1rem;
 }
 
-.taskInfo p {
-  font-size: 1rem;
+.taskInfo label {
+  font-size: 1.25rem;
 }
 
 .clear.list {
@@ -72,4 +94,13 @@ input:focus {
   background-color: #f0ecec;
   color: rgba(77, 74, 74, 0.8);
   cursor: pointer;
+}
+
+[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.task-name {
+  outline: none;
 }
