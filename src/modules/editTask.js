@@ -7,35 +7,15 @@ const editTask = (tasks) => {
       if (e.keyCode === 13) {
         e.preventDefault();
         if (taskName[i].innerHTML === '') {
-          alert('Please add task discription!');
-          taskName[i].focus();
-        }
-        tasks.editTask(i, taskName[i].innerHTML);
-        taskName[i].blur();
-      }
-      // if the user press esc
-      const taskElementName = tasks.taskArray[i].name;
-      if (e.keyCode === 27) {
-        taskName[i].innerHTML = taskElementName;
-        // console.log(taskele);
-        taskName[i].blur();
-      }
-    });
-    // event listener for clicking outside the description of the task.
-    const deleteIcon = document.querySelector('.delete-icon');
-    const deleteButton = document.querySelector('.delete-btn');
-    document.addEventListener('click', (e) => {
-      if (
-        taskName[i] !== e.target
-        && e.target !== deleteIcon
-        && e.target !== deleteButton
-      ) {
-        if (taskName[i].innerHTML === '') {
-          alert('Please add task discription!');
-          taskName[i].focus();
+          tasks.display();
         } else {
           tasks.editTask(i, taskName[i].innerHTML);
+          taskName[i].blur();
         }
+      }
+      // if the user press esc
+      if (e.keyCode === 27) {
+        tasks.display();
       }
     });
   }
